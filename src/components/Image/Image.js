@@ -43,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%"
   },
   large: {
-
+    height: "85%",
+    width: "85%"
   }
 }));
 
