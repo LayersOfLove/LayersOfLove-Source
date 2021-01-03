@@ -7,7 +7,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 
-const IMG_DIR = '../../img/';
+import Image from '../Image/Image';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +29,9 @@ export default function SelectionGrid() {
         <Grid container justify="center" spacing={2}>
           {[0, 1, 2, 3, 4].map((value) => (
             <Grid key={value} item>
-              <Paper className={classes.paper} />
+              <Paper className={classes.paper} children={
+                <Image index={value} size={"medium"}/>
+              } />
             </Grid>
           ))}
         </Grid>
@@ -38,7 +40,10 @@ export default function SelectionGrid() {
         <Grid container justify="center" spacing={2}>
           {[5, 6, 7, 8, 9].map((value) => (
             <Grid key={value} item>
-              <Paper className={classes.paper} />
+              <Paper className={classes.paper} children={
+                <>
+                </>
+              } />
             </Grid>
           ))}
         </Grid>
