@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "release": "npm run build && cp -rf build/* ../LayersOfLove.github.io/ && (cd ../LayersOfLove.github.io && git add -A && git commit -m 'new release' && git push)" 
   },
   "eslintConfig": {
     "extends": [

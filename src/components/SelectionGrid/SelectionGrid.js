@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "1em"
   },
   paper: {
-    height: 140,
-    width: 100,
+    height: 2 * 40,
+    width: 3 * 40,
   },
 }));
 
@@ -41,8 +41,7 @@ export default function SelectionGrid() {
           {[5, 6, 7, 8, 9].map((value) => (
             <Grid key={value} item>
               <Paper className={classes.paper} children={
-                <>
-                </>
+                <Image index={value} size={"medium"} />
               } />
             </Grid>
           ))}
