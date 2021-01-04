@@ -7,12 +7,13 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 
-import Image from '../Image/Image';
+import Image from '../Image';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: "1em"
+    marginTop: "1.5em",
+    marginBottom: "1.3em"
   },
   paper: {
     height: 2 * 40,
