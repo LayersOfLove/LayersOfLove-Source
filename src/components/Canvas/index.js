@@ -75,6 +75,12 @@ export default function Canvas({ zIndexMapping }) {
 
   return (
     <>
+      <p style={{
+        padding: 0,
+        margin: 0,
+        textAlign: 'left',
+        fontSize: '0.9em'
+      }}>Canvas</p>
       {isBlank ? 
         <div className={classes.blankDiv}></div>
       :

@@ -31,8 +31,7 @@ const images = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: "1.5em",
-    marginBottom: "1.3em"
+    marginBottom: "1em"
   },
   paper: {
     position: 'relative',

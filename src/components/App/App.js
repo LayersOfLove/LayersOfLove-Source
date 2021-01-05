@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Typography from '@material-ui/core/Typography';
+
 import './App.css';
 import Header from '../Header'
 import SelectionGrid from '../SelectionGrid';
@@ -42,6 +44,7 @@ export default function App() {
     <div className="App">
       <Header />
       <Container maxWidth="md">
+        <h2>Hello! [Placeholder text on top]</h2>
         <SelectionGrid 
           updateZIndexState={newZIndex => updateZIndexState(newZIndex)} />
         <Grid container>
