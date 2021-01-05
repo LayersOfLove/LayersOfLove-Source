@@ -35,23 +35,20 @@ const images = [
 ]
 
 const useStyles = makeStyles((theme) => ({
-  small: {
-
-  },
   medium: {
     height: "100%",
     width: "100%"
   },
   large: {
     height: "85%",
-    width: "85%"
+    width: "99%",
+    paddingTop: '0.3em'
   }
 }));
 
 export default function Image({index, size}) {
   const classes = useStyles();
   const classBySize = {
-    "small": classes.small,
     "medium": classes.medium,
     "large": classes.large
   }
