@@ -11,6 +11,7 @@ import layer06 from '../../img/layer06.png';
 import layer07 from '../../img/layer07.png';
 import layer08 from '../../img/layer08.png';
 import layer09 from '../../img/layer09.png';
+import blank from '../../img/blank.png';
 
 /**
  * --- Image math ---
@@ -32,6 +33,7 @@ const images = [
   layer07,
   layer08,
   layer09,
+  blank
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -52,11 +54,12 @@ export default function Image({index, size}) {
     "medium": classes.medium,
     "large": classes.large
   }
+  if (index < 0) index = 10;
 
   return (
     <img 
       src={images[index]} 
-      alt={"Layer 0" + index} 
+      alt={"Layer " + index} 
       className={classBySize[size]}
     /> 
   );
