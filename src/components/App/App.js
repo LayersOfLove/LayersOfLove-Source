@@ -32,19 +32,24 @@ export default function App() {
    * in the list.
    *  
    */
-  const [zIndexMapping, setZIndexMapping] = useState([0, 0, 0, 0, 0, 0, 0]);
+  const [zIndexMapping, setZIndexMapping] = useState([1, 2, 3, 6, 1, 4, 7, 8, 9, 10]);
+
+  function updateZIndexState(newZIndex) {
+    setZIndexMapping(zIndexMapping)
+  }
 
   return (
     <div className="App">
       <Header />
       <Container maxWidth="md">
-        <SelectionGrid />
+        <SelectionGrid 
+          updateZIndexState={newZIndex => updateZIndexState(newZIndex)} />
         <Grid container>
           <Grid item md={3}>
             <InstructionBar />
           </Grid>
           <Grid item md={9}>
-            <Canvas />
+            <Canvas zIndexMapping={zIndexMapping} />
             <CanvasShareBar />
           </Grid>
           <Grid item xs={12}>
