@@ -41,89 +41,168 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     height: "100%",
-    width: "100%"
+    width: "100%",
+    cursor: 'pointer'
   },
 }));
-
-function Image({ imageId, zIndex }) {
-  const classes = useStyles();
-
-  return (
-    <>
-    { zIndex == 0 ? 
-      <img
-        src={images[imageId]}
-        alt={"Layer " + imageId}
-        className={classes.image}
-      />
-    :
-      <>
-        <img
-          src={images[imageId]}
-          alt={"Layer " + imageId}
-          style={{
-            position: 'absolute',
-            height: "100%",
-            width: "100%",
-            top: 0,
-            left: 0
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            height: "100%",
-            width: "100%",
-            top: 0,
-            left: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.46)',
-            alignItems: 'center',
-            display: 'flex',
-          }}
-        >
-            <Typography variant="h4" color="inherit" noWrap
-              style={{
-                position: 'absolute',
-                left: '30%',
-                color: 'white',
-                backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                borderRadius: '1em 1em 1em 1em',
-                padding: '0.1em',
-                width: '35%',
-              }}
-            >
-              {zIndex}
-          </Typography>
-        </div>
-      </>
-    }
-    </>
-  );
-}
 
 export default function SelectionGrid({ updateZIndexState }) {
   const classes = useStyles();
   const [zIndexMapping, setZIndexMapping] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [zIndexStack, setZIndexStack] = useState([]);
+
+  function imageClicked(imageId) {
+    // update the stack 
+    setZIndexStack(currentStack => {
+      let index = currentStack.indexOf(imageId);
+      let newStack = [...currentStack];
+      if (index > -1) {
+        // remove this image from the zIndexStack, if it exists in the current stack
+        newStack.splice(index, 1);
+      } else {
+        // add this image to the current stack
+        newStack.push(imageId);        
+      }
+
+      // update the zIndexMapping state based on the new updated stack
+      setZIndexMapping(currentMapping => {
+        let newMapping = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        newStack.forEach((item, index) => {
+          newMapping[item] = index + 1;
+        });
+
+        // update the parent's zIndexMapping so the parent can propogate the 
+        // change onto the canvas.
+        updateZIndexState([...newMapping]);
+        return newMapping;
+      });
+
+      return newStack;
+    });
+
+  }
 
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>
-          {[0, 1, 2, 3, 4].map((value) => (
-            <Grid key={value} item>
+          {[0, 1, 2, 3, 4].map((imageId) => (
+            <Grid key={imageId} item>
               <Paper className={classes.paper} children={
-                <Image imageId={value} zIndex={zIndexMapping[value]} />
-              } />
+                <>
+                  { zIndexMapping[imageId] === 0 ? 
+                        <img
+                          src={images[imageId]}
+                          alt={"Layer " + imageId}
+                          className={classes.image}
+                          onClick={() => imageClicked(imageId)}
+                        />
+                      :
+                        <>
+                          <img
+                            src={images[imageId]}
+                            alt={"Layer " + imageId}
+                            style={{
+                              position: 'absolute',
+                              height: "100%",
+                              width: "100%",
+                              top: 0,
+                              left: 0
+                            }}
+                          />
+                          <div
+                            onClick={() => imageClicked(imageId)}
+                            style={{
+                              position: 'absolute',
+                              height: "100%",
+                              width: "100%",
+                              top: 0,
+                              left: 0,
+                              backgroundColor: 'rgba(0, 0, 0, 0.46)',
+                              alignItems: 'center',
+                              display: 'flex',
+                              cursor: 'pointer'
+                            }}
+                          >
+                              <Typography variant="h4" color="inherit" noWrap
+                                style={{
+                                  position: 'absolute',
+                                  left: '30%',
+                                  color: 'white',
+                                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                                  borderRadius: '1em 1em 1em 1em',
+                                  padding: '0.1em',
+                                  width: '35%',
+                                }}
+                              >
+                                {zIndexMapping[imageId]}
+                            </Typography>
+                          </div>
+                        </>
+                  }
+                </> }
+               />
             </Grid>
           ))}
         </Grid>
       </Grid>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>
-          {[5, 6, 7, 8, 9].map((value) => (
-            <Grid key={value} item>
+          {[5, 6, 7, 8, 9].map((imageId) => (
+            <Grid key={imageId} item>
               <Paper className={classes.paper} children={
-                <Image imageId={value} zIndex={zIndexMapping[value]} />
+                <>
+                  { zIndexMapping[imageId] === 0 ? 
+                        <img
+                          src={images[imageId]}
+                          alt={"Layer " + imageId}
+                          className={classes.image}
+                          onClick={() => imageClicked(imageId)}
+                        />
+                      :
+                        <>
+                          <img
+                            src={images[imageId]}
+                            alt={"Layer " + imageId}
+                            style={{
+                              position: 'absolute',
+                              height: "100%",
+                              width: "100%",
+                              top: 0,
+                              left: 0
+                            }}
+                            />
+                          <div
+                            onClick={() => imageClicked(imageId)}
+                            style={{
+                              position: 'absolute',
+                              height: "100%",
+                              width: "100%",
+                              top: 0,
+                              left: 0,
+                              backgroundColor: 'rgba(0, 0, 0, 0.46)',
+                              alignItems: 'center',
+                              display: 'flex',
+                              cursor: 'pointer'
+                            }}
+                          >
+                              <Typography variant="h4" color="inherit" noWrap
+                                style={{
+                                  position: 'absolute',
+                                  left: '30%',
+                                  color: 'white',
+                                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                                  borderRadius: '1em',
+                                  padding: '0.1em',
+                                  width: '35%',
+                                }}
+                              >
+                                {zIndexMapping[imageId]}
+                            </Typography>
+                          </div>
+                        </>
+                      }
+                </>
               } />
             </Grid>
           ))}

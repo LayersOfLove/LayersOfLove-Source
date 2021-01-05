@@ -32,10 +32,10 @@ export default function App() {
    * in the list.
    *  
    */
-  const [zIndexMapping, setZIndexMapping] = useState([1, 2, 3, 6, 1, 4, 7, 8, 9, 10]);
+  const [zIndexMapping, setZIndexMapping] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
   function updateZIndexState(newZIndex) {
-    setZIndexMapping(zIndexMapping)
+    setZIndexMapping(newZIndex);
   }
 
   return (

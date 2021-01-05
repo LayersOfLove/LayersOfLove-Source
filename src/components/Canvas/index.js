@@ -28,7 +28,6 @@ const images = [
 const useStyles = makeStyles(theme => ({
   canvasDiv: {
     position: 'relative',
-    border: '1.5px solid black',
     width: '654.55px',
     height: '436.36px'
   }, 
@@ -50,7 +49,7 @@ function Image({ imageId, zIndex }) {
   */
   return (
     <>
-    {zIndex == 0 ? <></> : 
+    {zIndex === 0 ? <></> : 
       <img
         src={images[imageId]}
         alt={"Layer " + imageId}
@@ -72,7 +71,7 @@ function Image({ imageId, zIndex }) {
 
 export default function Canvas({ zIndexMapping }) {
   const classes = useStyles();
-  const isBlank = zIndexMapping.reduce((a, b) => a + b, 0) == 0;
+  const isBlank = zIndexMapping.reduce((a, b) => a + b, 0) === 0;
 
   return (
     <>
@@ -82,7 +81,7 @@ export default function Canvas({ zIndexMapping }) {
         <div className={classes.canvasDiv}>
           {zIndexMapping.map((val, i) => {
             return (
-              <Image imageId={i} zIndex={val} />
+              <Image key={`cgi-${i}`} imageId={i} zIndex={val} />
             );
           })}
         </div>
