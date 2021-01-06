@@ -34,7 +34,7 @@ export default function Header() {
               Layers of Love
           </Typography>
           <Typography className={classes.authors} variant="h6" color="inherit" noWrap>
-            Khadija Aziz & Lauren Kay Keeling
+            Khadija Aziz & Laura Kay Keeling
           </Typography>
         </div>
       </Toolbar>
