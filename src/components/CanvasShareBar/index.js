@@ -13,12 +13,13 @@ export default function CanvasShareBar() {
   const classes = useStyles();
 
   return (
-    <div style={{
-      textAlign: 'right',
-      paddingRight: '1.8em'
-    }}>
-      Share on social media:
-      <div>
+    <div>
+      <div style={{
+        textAlign: 'left',
+        paddingRight: '1.8em',
+        height: '100%',
+        paddingTop: '0.4em'
+      }}>
         <Tooltip title="Twitter">
           <Twitter className={classes.shareIcon} />
         </Tooltip>

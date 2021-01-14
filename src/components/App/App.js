@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Typography from '@material-ui/core/Typography';
 
 import './App.css';
 import Header from '../Header'
@@ -44,21 +43,29 @@ export default function App() {
     <div className="App">
       <Header />
       <Container maxWidth="md">
-        <h2>Hello! [Placeholder text on top]</h2>
+        <p style={{
+          margin: '1.6em',
+          fontSize: '1.2em'
+        }}>
+          Hello! We are <a href="https://www.khadijaaziz.com/" target="_blank">Khadija Aziz</a> and <a href="https://www.laurakaykeeling.com/" target="_blank">Laura Kay Keeling</a>, and we invite you to experience the benefits of artistic collaboration by engaging with <em style={{color:'red'}}>Layers of Labour of Love</em>. This project is an extension of digital collages initially created for the 2021 DesignTO Festival’s curated exhibition Exchange Piece. 
+        </p>
         <SelectionGrid 
           updateZIndexState={newZIndex => updateZIndexState(newZIndex)} />
+      </Container>
+      <Container maxWidth="lg">
         <Grid container>
-          <Grid item md={3}>
+          <Grid item md={5}>
             <InstructionBar />
           </Grid>
-          <Grid item md={9}>
+          <Grid item md={7}>
             <Canvas zIndexMapping={zIndexMapping} />
             <CanvasShareBar />
           </Grid>
-          <Grid item xs={12}>
-            <Description />
-          </Grid>
         </Grid>
+      </Container>
+      <br/>
+      <Container maxWidth="md">
+        <Description />
       </Container>
       <Footer />
     </div>

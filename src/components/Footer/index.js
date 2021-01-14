@@ -5,7 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.main,
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
+    position: 'fixed',
+    bottom: 0,
+    width: '100%'
   },
 }));
 
