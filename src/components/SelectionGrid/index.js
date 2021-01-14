@@ -82,7 +82,14 @@ export default function SelectionGrid({ updateZIndexState }) {
   }
 
   return (
-    <Grid container className={classes.root} spacing={2}>
+    <>
+      <p style={{
+        paddingLeft: '8.6em',
+        margin: 0,
+        textAlign: 'left',
+        fontSize: '0.9em'
+      }}>Layers</p>    
+      <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>
           {[0, 1, 2, 3, 4].map((imageId) => (
@@ -208,5 +215,6 @@ export default function SelectionGrid({ updateZIndexState }) {
         </Grid>
       </Grid>
     </Grid>
+    </>
   );
 }
