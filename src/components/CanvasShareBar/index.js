@@ -49,7 +49,11 @@ export default function CanvasShareBar({ zIndexMappingStr }) {
           >
           Submit
         </Button>
-        <FormModal formModalOpen={formModalOpen} handleClose={() => setFormModalOpen(false)} />
+        <FormModal 
+          formModalOpen={formModalOpen} 
+          handleClose={() => setFormModalOpen(false)} 
+          zIndexMapping={zIndexMappingStr}  
+        />
       </Grid>
       
       {/* Twitter */}
