@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 
 import khadija from '../../img/khadija.jpg';
+import laura from '../../img/laura.jpg';
 
 export default function Description() {
   return (
@@ -16,17 +17,21 @@ export default function Description() {
 
     <h4>Artist Bios</h4>
     <Grid container>
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <img 
           src={khadija}
           style={{
-            width: '200px'
+            width: '200px',
+            marginLeft: '20px'
           }}
         ></img>
       </Grid>
-      <Grid item xs={9} 
+      <Grid item xs={8} 
         style={{
-          textAlign: 'left'
+          textAlign: 'left',
+          marginBottom: '35px',
+          position: 'relative',
+          left: '24px'
         }}  
       >
         <strong>Khadija Aziz</strong><br />
@@ -35,21 +40,24 @@ export default function Description() {
             Khadija Aziz is a textile artist and educator who investigates spontaneous experimentation in her process-based practice. She graduated from OCAD University’s Material Art & Design program in June 2020 with a BFA, and she is currently pursuing an MFA at Concordia University’s Fibre & Material Practices program. Khadija received the 2019 Award of Excellence in Community Arts Engagement from the Ontario Museum Association for her work at the Textile Museum of Canada. In recognition of her creative practice, Khadija has most recently received the Shanks Memorial Award in Textiles from Craft Ontario and the Creative Promise Award from Surface Design Association in 2020.
         </p>   
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <img
-          src={khadija}
+          src={laura}
           style={{
-            width: '200px'
+            width: '300px',
+            marginLeft: '14px'
           }}
         ></img>
       </Grid>
-      <Grid item xs={9}
+      <Grid item xs={8}
           style={{
-            textAlign: 'left'
+            position: 'relative',
+            textAlign: 'left',
+            left: '24px'
           }}
       >
         <strong>Laura Kay Keeling</strong><br />
-          <a href="Www.laurakaykeeling.com">Www.laurakaykeeling.com</a> / <a href="https://www.instagram.com/lllllllllllllllllkk/">@lllllllllllllllllkk</a>
+          <a href="Www.laurakaykeeling.com">www.laurakaykeeling.com</a> / <a href="https://www.instagram.com/laurakaykeeling/">@laurakaykeeling</a> / Analog Photography <a href="https://www.instagram.com/lllllllllllllllllkk/">@lllllllllllllllllkk</a>
         <p>
             Laura Kay Keeling is a Toronto-based artist whose work encompasses analog photography, video, collage and installation-based projects. Her work explores how we form connections with each other and nature. Exploring and unpacking emotions through the creation of new work, while examining concepts related to “the visitor” as spoken about in Rumi’s Poem ‘The Guest House’. Laura feels very connected to and at peace in nature; her new works explore ideas relating to plant sentience and reciprocal care.
         </p>
