@@ -65,7 +65,7 @@ export default function SelectionGrid({ updateZIndexState }) {
 
       // update the zIndexMapping state based on the new updated stack
       setZIndexMapping(currentMapping => {
-        let newMapping = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let newMapping = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         newStack.forEach((item, index) => {
           newMapping[item] = index + 1;
         });

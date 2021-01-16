@@ -80,7 +80,18 @@ export default function CanvasShareBar({ zIndexMappingStr }) {
         </IconButton>
 
       {/* Copy link */}
-        <IconButton color="secondary">
+        <IconButton 
+          color="secondary"
+          onClick={() => {
+            // copy logic from: https://stackoverflow.com/a/50795833
+            let temp = document.createElement('input');
+            temp.value = url;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+          }}  
+        >
           <Tooltip title="Copy link">
             <Link className={classes.shareIcon} />
           </Tooltip>
