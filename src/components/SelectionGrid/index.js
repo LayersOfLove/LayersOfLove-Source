@@ -4,28 +4,28 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-import layer00 from '../../img/layer00.png';
-import layer01 from '../../img/layer01.png';
-import layer02 from '../../img/layer02.png';
-import layer03 from '../../img/layer03.png';
-import layer04 from '../../img/layer04.png';
-import layer05 from '../../img/layer05.png';
-import layer06 from '../../img/layer06.png';
-import layer07 from '../../img/layer07.png';
-import layer08 from '../../img/layer08.png';
-import layer09 from '../../img/layer09.png';
+import layer00l from '../../img/layer00l.png';
+import layer01l from '../../img/layer01l.png';
+import layer02l from '../../img/layer02l.png';
+import layer03l from '../../img/layer03l.png';
+import layer04l from '../../img/layer04l.png';
+import layer05l from '../../img/layer05l.png';
+import layer06l from '../../img/layer06l.png';
+import layer07l from '../../img/layer07l.png';
+import layer08l from '../../img/layer08l.png';
+import layer09l from '../../img/layer09l.png';
 
 const images = [
-  layer00,
-  layer01,
-  layer02,
-  layer03,
-  layer04,
-  layer05,
-  layer06,
-  layer07,
-  layer08,
-  layer09,
+  layer00l,
+  layer01l,
+  layer02l,
+  layer03l,
+  layer04l,
+  layer05l,
+  layer06l,
+  layer07l,
+  layer08l,
+  layer09l,
 ]
 
 const useStyles = makeStyles((theme) => ({
