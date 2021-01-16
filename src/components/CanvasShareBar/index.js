@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Link } from '@material-ui/icons';
+import { Facebook, Twitter, Link } from '@material-ui/icons';
 import { 
   Button,
   IconButton, 
@@ -27,7 +27,6 @@ export default function CanvasShareBar({ zIndexMappingStr }) {
   const socials = {
     'Twitter': <Twitter className={classes.shareIcon} />,
     'Facebook': <Facebook className={classes.shareIcon} />,
-    'Instagram': <Instagram className={classes.shareIcon} />,
     'Copy link': <Link className={classes.shareIcon} />
   }
 
@@ -71,13 +70,6 @@ export default function CanvasShareBar({ zIndexMappingStr }) {
             </Tooltip>
           </IconButton>
         </FacebookShareButton>
-
-      {/* Instagram */}
-        <IconButton color="secondary">
-          <Tooltip title="Instagram">
-            <Instagram className={classes.shareIcon} />
-          </Tooltip>
-        </IconButton>
 
       {/* Copy link */}
         <IconButton 
