@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Facebook, Twitter, Link } from '@material-ui/icons';
 import { 
   Button,
@@ -11,6 +11,8 @@ import {
   FacebookShareButton,
   TwitterShareButton
 } from 'react-share';
+
+import FormModal from '../FormModal';
 
 const useStyles = makeStyles(theme => ({
   shareIcon: {
@@ -30,16 +32,24 @@ export default function CanvasShareBar({ zIndexMappingStr }) {
     'Copy link': <Link className={classes.shareIcon} />
   }
 
+  const [formModalOpen, setFormModalOpen] = useState(false);
+
   return (
     <Grid container style={{
       paddingTop: '0.2em'
     }}>
       <Grid item md={1}>
-        <Button variant="contained" color="primary" style={{
-          marginTop: '0.35em'
-        }}>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          style={{
+            marginTop: '0.35em'
+          }}
+          onClick={() => setFormModalOpen(true)}
+          >
           Submit
         </Button>
+        <FormModal formModalOpen={formModalOpen} handleClose={() => setFormModalOpen(false)} />
       </Grid>
       
       {/* Twitter */}
