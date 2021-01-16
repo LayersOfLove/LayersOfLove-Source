@@ -27,6 +27,18 @@ const images = [
   layer08l,
   layer09l,
 ]
+const alts = [
+  'Scanned textured taupe fabric.',
+  'Scanned dried florals. The image is mirrored horizontally. Included: dried pink flower buds, dried yellow petals, small pink and yellow florals.',
+  'Two rows of black, gray, and white "U" shapes digitally drawn across the top of the Canvas. The drawings are larger on the left side of the Canvas, and shortens as it moves across to the right side.',
+  'Small pink opaque square centered on the Canvas. On top of the square is a pink scanned flower. On top of the flower is a scanned piece of pyrite (fool’s gold).',
+  'Red and white woven cloth, distorted to form a zig-zag pattern with four large white diamonds laid horizontally in the centre.',
+  'Small rectangle in the center of the Canvas featuring scanned pink flowers with some purple buds. The rectangle includes cropped pieces of this image layered and flipped to change the direction that the flowers point.',
+  'Two columns of three rows of blue glass beads, standing parallel to each other with a wide opening at the centre.',
+  'Scanned red fabric cut into watermelon slice shape and made opaque. Located in the bottom right and top left of the Canvas.',
+  'Two pink flowers with magenta centres mirroring each other on the right and left centres of the Canvas.',
+  'Two rows of black, gray, and white "U" shapes digitally drawn across the bottom of the Canvas. The drawings are larger on the right side of the Canvas, and shortens as it moves across to the left side.'
+]
 
 const useStyles = makeStyles((theme) => ({
   root: {
