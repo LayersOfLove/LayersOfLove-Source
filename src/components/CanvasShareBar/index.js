@@ -19,9 +19,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const BASE_URL = "https://layersoflove.ca"
+const URL_W_Z = BASE_URL + "/?z=";
 
-export default function CanvasShareBar() {
+export default function CanvasShareBar({ zIndexMappingStr }) {
   const classes = useStyles();
+  const url = zIndexMappingStr === '0000000000' ? BASE_URL : URL_W_Z + zIndexMappingStr;
   const socials = {
     'Twitter': <Twitter className={classes.shareIcon} />,
     'Facebook': <Facebook className={classes.shareIcon} />,
@@ -44,7 +46,7 @@ export default function CanvasShareBar() {
       {/* Twitter */}
       <Grid item md={5}>
         <TwitterShareButton 
-          url={BASE_URL}
+          url={url}
           title="I just made a #LayersofLabourofLove digital collage with @_khadija_a_ and @laurakaykeeling! #DesignTO21"
           related={["_khadija_a_", "laurakaykeeling"]}
         >
@@ -57,9 +59,9 @@ export default function CanvasShareBar() {
 
       {/* Facebook */}
         <FacebookShareButton 
-          url={BASE_URL}
+          url={url}
           quote="I just made a #LayersofLabourofLove digital collage with Khadija Aziz and Laura Keeling! #DesignTO21"   
-          hashtag="#LayersofLabourofLove"     
+          hashtag="#LayersofLabourofLove"    
         >
           <IconButton color="secondary">
             <Tooltip title="Facebook">

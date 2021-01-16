@@ -78,7 +78,7 @@ export default function App() {
           </Grid>
           <Grid item md={7}>
             <Canvas zIndexMapping={zIndexMapping} />
-            <CanvasShareBar />
+            <CanvasShareBar zIndexMappingStr={zIndexMapping.join('')} />
           </Grid>
         </Grid>
       </Container>
