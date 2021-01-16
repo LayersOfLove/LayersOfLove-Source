@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './App.css';
 import Header from '../Header'
+import IntroParagraph from '../IntroParagraph';
 import SelectionGrid from '../SelectionGrid';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +11,29 @@ import InstructionBar from '../InstructionBar';
 import Description from '../Description';
 import CanvasShareBar from '../CanvasShareBar';
 import Footer from '../Footer';
+
+const DEFAULT_ZIN_MAPPING = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+function getZMappingFromUrl() {
+  let search = window.location.search;
+  let params = new URLSearchParams(search);
+  let zParam = params.get('z');
+  let zIndexMapping = [];
+  
+  // validate the given zParam.
+  // its length must be exactly 10, otherwise we ignore it.
+  // each of its chars must be between '0' and '9', and each 
+  // char must be unique.
+  if (zParam.length != 10) return DEFAULT_ZIN_MAPPING;
+  
+  for (let i = 0; i < 10; i++) {
+    let z = parseInt(zParam[i]);
+    if (zIndexMapping.indexOf(z) < 0 && z >= 0 && z <= 9) {
+      zIndexMapping.push(z);
+    } else return DEFAULT_ZIN_MAPPING;
+  }
+  return zIndexMapping;
+}
 
 export default function App() {
   /**
@@ -33,7 +57,7 @@ export default function App() {
    * in the list.
    *  
    */
-  const [zIndexMapping, setZIndexMapping] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [zIndexMapping, setZIndexMapping] = useState(getZMappingFromUrl());
 
   function updateZIndexState(newZIndex) {
     setZIndexMapping(newZIndex);
@@ -43,12 +67,7 @@ export default function App() {
     <div className="App">
       <Header />
       <Container maxWidth="md">
-        <p style={{
-          margin: '1.6em',
-          fontSize: '1.2em'
-        }}>
-          Hello! We are <a href="https://www.khadijaaziz.com/" target="_blank">Khadija Aziz</a> and <a href="https://www.laurakaykeeling.com/" target="_blank">Laura Kay Keeling</a>, and we invite you to experience the benefits of artistic collaboration by engaging with <em style={{color:'red'}}>Layers of Labour of Love</em>. This project is an extension of digital collages initially created for the 2021 DesignTO Festival’s curated exhibition Exchange Piece. 
-        </p>
+        <IntroParagraph />
         <SelectionGrid 
           updateZIndexState={newZIndex => updateZIndexState(newZIndex)} />
       </Container>
