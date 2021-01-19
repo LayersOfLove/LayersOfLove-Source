@@ -35,7 +35,7 @@ export default function SimpleModal({ formModalOpen, handleClose, zIndexMapping 
     <div style={modalStyle} className={classes.paper}>
       <iframe 
         src={"https://docs.google.com/forms/d/e/1FAIpQLSeL-qiTWPPxeF5c9y6tst12R3P2UN--XnZ7PybY8FeBs4H4qA/viewform?embedded=true&usp=pp_url&entry.875432947=https://layersoflove.ca/?z%3D" + zIndexMapping} 
-        width="800" height="1000" frameborder="0" marginheight="1000" marginwidth="0">Loading…</iframe>    </div>
+        width="800" height="700" frameborder="0" marginheight="1000" marginwidth="0">Loading…</iframe>    </div>
   );
 
   return (

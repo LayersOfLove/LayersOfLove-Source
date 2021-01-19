@@ -114,6 +114,7 @@ function getZMappingFromUrl() {
       <Container maxWidth="md">
         <Description />
       </Container>
+      <Footer />
     </div>
   );
 }
