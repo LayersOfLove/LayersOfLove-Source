@@ -1,0 +1,7 @@
+.mobileWarning {
+  display: none;
+}
+
+@media (max-width: 1024px) { 
+   .mobileWarning {display: block;}
+}

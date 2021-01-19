@@ -21,8 +21,8 @@ export default function Description() {
         <img 
           src={khadija}
           style={{
-            width: '200px',
-            marginLeft: '20px'
+            width: '300px',
+            marginLeft: '14px'
           }}
         ></img>
       </Grid>

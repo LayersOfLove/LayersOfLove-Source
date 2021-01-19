@@ -24,7 +24,7 @@ export default function InstructionBar() {
           Please also click “Submit”, so you can directly share your art and comments with artists Khadija Aziz and Laura Kay Keeling.
         </li>
         <li>
-          When sharing your collage on social media, please tag us so we can enjoy and share your Layers of Love digital collage! @khadija_a_  @laurakaykeeling 
+          When sharing your collage on social media, please tag us so we can enjoy and share your Layers of Love digital collage! <a href="https://www.instagram.com/_khadija_a_">@_khadija_a_</a>  <a href="https://www.instagram.com/laurakaykeeling/">@laurakaykeeling</a> 
         </li>
       </ol>
     </div>
